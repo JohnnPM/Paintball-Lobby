@@ -1,0 +1,4 @@
+name: Paintball-Lobby
+version: 0.0.1-SNAPSHOT
+main: paintball.lobby.PaintballLobby
+author: Johnn
