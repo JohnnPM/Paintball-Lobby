@@ -38,6 +38,7 @@ public class PaintballLobby extends JavaPlugin
 				.getMessenger()
 				.registerIncomingPluginChannel(getInstance(),
 						References.PB_MSG_CHANNEL, new PluginMessaging());
+		
 	}
 
 	@Override public void onDisable()
