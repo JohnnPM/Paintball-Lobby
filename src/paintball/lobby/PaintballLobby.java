@@ -13,6 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import paintball.lobby.bungee.PluginMessaging;
 import paintball.lobby.lib.References;
+import paintball.lobby.signs.SignsManager;
 import paintball.lobby.util.EventUtil;
 
 /**
@@ -21,7 +22,8 @@ import paintball.lobby.util.EventUtil;
 public class PaintballLobby extends JavaPlugin
 {
 	static @Getter private PaintballLobby instance;
-
+	static @Getter private SignsManager signsManager;
+	
 	@Override public void onLoad()
 	{
 		instance = this; // KTHNXBAI
@@ -39,6 +41,9 @@ public class PaintballLobby extends JavaPlugin
 				.registerIncomingPluginChannel(getInstance(),
 						References.PB_MSG_CHANNEL, new PluginMessaging());
 		
+		signsManager = new SignsManager();
+		signsManager.init(getInstance());
+
 	}
 
 	@Override public void onDisable()
